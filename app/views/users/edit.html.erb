@@ -1,0 +1,13 @@
+<h1>Edit user</h1>
+<%= form_with model: @user do |form| %>
+    <%= label(:user, :email) %>
+    <%= form.email_field :email %>
+    <br>
+    <%= label(:user, :username) %>
+    <%= form.text_field :username %>
+    <br>
+    <%= label(:user, :password) %>
+    <%= form.password_field :password %>
+    <br>
+    <%= form.submit %>
+<% end %>
