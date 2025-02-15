@@ -1,5 +1,12 @@
 <h1>Edit user</h1>
 <%= form_with model: @user do |form| %>
+    <% if @user.errors.any? %>
+        <ul style="color: red">
+            <% @user.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    <% end %>
     <%= label(:user, :email) %>
     <%= form.email_field :email %>
     <br>
